@@ -4,10 +4,10 @@ from PIL import Image
 
 def main_app(name):
         
-        face_cascade = cv2.CascadeClassifier('./data/haarcascade_frontalface_default.xml')
+        face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades +"haarcascade_frontalface_default.xml")
         recognizer = cv2.face.LBPHFaceRecognizer_create()
-        recognizer.read(f"./data/classifiers/{name}_classifier.xml")
-        cap = cv2.VideoCapture(0)
+        recognizer.read(f"D:\\HocTap\\New folder\\app\\FaceRecognition-GUI-APP\\data\\{name}_classifier.xml")
+        cap = cv2.VideoCapture(1)
         pred = 0
         while True:
             ret, frame = cap.read()

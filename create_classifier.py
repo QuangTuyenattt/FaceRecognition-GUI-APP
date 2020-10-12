@@ -7,7 +7,7 @@ import os, cv2
 # Method to train custom classifier to recognize face
 def train_classifer(name):
     # Read all the images in custom data-set
-    path = os.path.join(os.getcwd()+"/data/"+name+"/")
+    path = os.path.join(os.getcwd()+"\\data\\"+name+"\\")
 
     faces = []
     ids = []
@@ -36,5 +36,5 @@ def train_classifer(name):
     #Train and save classifier
     clf = cv2.face.LBPHFaceRecognizer_create()
     clf.train(faces, ids)
-    clf.write("./data/classifiers/"+name+"_classifier.xml")
+    clf.write("D:\\HocTap\\New folder\\app\\FaceRecognition-GUI-APP\\data\\"+name+"_classifier.xml")
 

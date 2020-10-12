@@ -2,14 +2,14 @@ import cv2
 import os
 
 def start_capture(name):
-        path = "./data/" + name
+        path = ".\\data\\" + name
         num_of_images = 0
-        detector = cv2.CascadeClassifier("./data/haarcascade_frontalface_default.xml")
+        detector = cv2.CascadeClassifier(cv2.data.haarcascades +"haarcascade_frontalface_default.xml")
         try:
             os.makedirs(path)
         except:
             print('Directory Already Created')
-        vid = cv2.VideoCapture(0)
+        vid = cv2.VideoCapture(1)
         while True:
 
             ret, img = vid.read()
